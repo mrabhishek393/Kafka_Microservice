@@ -1,0 +1,12 @@
+C:\Users\Abhishek\source\repos\TheFinalProject\Producer\bin\Debug\net6.0\Producer.deps.json
+C:\Users\Abhishek\source\repos\TheFinalProject\Producer\bin\Debug\net6.0\Producer.dll
+C:\Users\Abhishek\source\repos\TheFinalProject\Producer\bin\Debug\net6.0\Producer.pdb
+C:\Users\Abhishek\source\repos\TheFinalProject\Producer\obj\Debug\net6.0\Producer.csproj.AssemblyReference.cache
+C:\Users\Abhishek\source\repos\TheFinalProject\Producer\obj\Debug\net6.0\Producer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Abhishek\source\repos\TheFinalProject\Producer\obj\Debug\net6.0\Producer.AssemblyInfoInputs.cache
+C:\Users\Abhishek\source\repos\TheFinalProject\Producer\obj\Debug\net6.0\Producer.AssemblyInfo.cs
+C:\Users\Abhishek\source\repos\TheFinalProject\Producer\obj\Debug\net6.0\Producer.csproj.CoreCompileInputs.cache
+C:\Users\Abhishek\source\repos\TheFinalProject\Producer\obj\Debug\net6.0\Producer.dll
+C:\Users\Abhishek\source\repos\TheFinalProject\Producer\obj\Debug\net6.0\refint\Producer.dll
+C:\Users\Abhishek\source\repos\TheFinalProject\Producer\obj\Debug\net6.0\Producer.pdb
+C:\Users\Abhishek\source\repos\TheFinalProject\Producer\obj\Debug\net6.0\ref\Producer.dll
