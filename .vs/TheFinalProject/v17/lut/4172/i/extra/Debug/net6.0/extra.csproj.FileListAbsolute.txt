@@ -1,0 +1,13 @@
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\b\extra\Debug\net6.0\extra.exe
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\b\extra\Debug\net6.0\extra.deps.json
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\b\extra\Debug\net6.0\extra.runtimeconfig.json
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\b\extra\Debug\net6.0\extra.dll
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\extra\Debug\net6.0\extra.csproj.AssemblyReference.cache
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\extra\Debug\net6.0\extra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\extra\Debug\net6.0\extra.AssemblyInfoInputs.cache
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\extra\Debug\net6.0\extra.AssemblyInfo.cs
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\extra\Debug\net6.0\extra.csproj.CopyComplete
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\extra\Debug\net6.0\extra.dll
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\extra\Debug\net6.0\refint\extra.dll
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\extra\Debug\net6.0\extra.genruntimeconfig.cache
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\extra\Debug\net6.0\ref\extra.dll

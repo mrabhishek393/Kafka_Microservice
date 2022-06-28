@@ -6,6 +6,8 @@ using Database.Models;
 using Newtonsoft.Json;
 using Producer;
 using System.Reflection;
+using System.Transactions;
+
 namespace API
 {
 
@@ -17,33 +19,45 @@ namespace API
         private readonly IDatabaseServices? _databaseServices; // Database services
         private readonly IProducerService? _producerService;   // Producer services
         private readonly IConfiguration? _config; //configuation file
-        private readonly ILogger<APIServices> _logger;
         private readonly IMapper _mapper;
 
         public APIServices(IConfiguration config,
             IDatabaseServices databaseServices,
             IProducerService producerService,
-            ILogger<APIServices> logger,
             IMapper mapper
             )
         {
             _config = config;
             _databaseServices = databaseServices;
             _producerService = producerService;
-            _logger = logger;
             _mapper = mapper;
         }
 
         public async Task<List<GroupModel>> GetAllRecords()
         {
-            return await _databaseServices.GetAllAsync();
+            try
+            {
+                return await _databaseServices.GetAllAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         /// <summary>
         /// get the current record from the database using ID if already present other wise null
         /// </summary>
         public async Task<GroupModel> GetSingleRowById(Guid? id)
         {
-            return await _databaseServices.GetbyIdAsync(id);
+            try
+            {
+                return await _databaseServices.GetbyIdAsync(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
 
         /// <summary>
@@ -52,18 +66,10 @@ namespace API
         /// </summary>
         public async Task<GroupModel> InsertAsync(AddDataDTO newvalue)
         {
-            using (var transaction = _databaseServices._Context.Database.BeginTransaction())
+            try
             {
-                try
+                using (var transactionScope = new TransactionScope())
                 {
-
-                    //GroupModel postobject = new GroupModel
-                    //{
-                    //    Id = Guid.NewGuid(),
-                    //    Name = newvalue.Name,
-                    //    Entitlements = ((newvalue.Entitlements == null) ? new List<Guid>() : newvalue.Entitlements),
-                    //    CreatedAt = DateTime.Now
-                    //};
 
                     GroupModel postobject = _mapper.Map<GroupModel>(newvalue);
 
@@ -71,85 +77,122 @@ namespace API
                     await _databaseServices.InsertAysnc(postobject);
 
                     //publish the new message to the further-topic
-                    await _producerService.WriteMessage(_config["Kafka:further-topic"], JsonConvert.SerializeObject(newvalue));
+                    await _producerService.WriteMessage(_config["Kafka:further-topic"], JsonConvert.SerializeObject(postobject));
 
-                    transaction.Commit();
+                    transactionScope.Complete();
                     return postobject;
+
                 }
-                catch (ProduceException<Null, string>)
-                {
-                    throw;
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
+            }
+            catch (ProduceException<Null, string>)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 
         public async Task<GroupModel> UpdateAsync(UpdateDTO request)
         {
-            using (var transaction = _databaseServices._Context.Database.BeginTransaction())
+
+            try
             {
-                //get the current record from the database if already present.
-                var oldvalue = await _databaseServices.GetbyIdAsync(request.Id);
-                var newvalue = _mapper.Map<UpdateDTO, GroupModel>(request, oldvalue);
-
-
-                //comapre 2 objects
-                bool issame = true;
-                foreach (PropertyInfo prop in oldvalue.GetType().GetProperties())
+                using (var transactionScope = new TransactionScope())
                 {
-                    var newcolumnvalue = (newvalue.GetType().GetProperty(prop.Name).GetValue(newvalue, null));
-                    var oldcolumnvalue = oldvalue.GetType().GetProperty(prop.Name).GetValue(oldvalue);
-                    if ((newcolumnvalue != null) && !newcolumnvalue.Equals(oldcolumnvalue))
+
+                    //get the current record from the database if already present.
+                    var oldvalue = await _databaseServices.GetbyIdAsync(request.Id);
+                    var newvalue = _mapper.Map<UpdateDTO, GroupModel>(request);
+
+
+                    newvalue.CreatedAt = oldvalue.CreatedAt;
+                    newvalue.Entitlements = newvalue.Entitlements.Distinct().ToList();
+
+                    //compare 2 objects
+                    bool issame = true;
+
+                    if (newvalue.Name != oldvalue.Name)
                     {
                         issame = false;
                     }
-                    else if (newcolumnvalue == null) newvalue.GetType().GetProperty(prop.Name).SetValue(newvalue, oldcolumnvalue, null);
+                    var new_entitlements_except_old = newvalue.Entitlements.Except(oldvalue.Entitlements);
 
-                }
-
-                //new data published on kafka is redundant information ==> issame=true
-                // if issame=false, updation must be done.
-                if (!issame)
-                {
-                    try
+                    //Console.WriteLine(new_entitlements_except_old.Count());
+                    if (new_entitlements_except_old.Count() != 0)
                     {
+                        issame = false;
+                    }
+
+                    //new data published on kafka is redundant information ==> issame=true
+                    // if issame=false, updation must be done.
+                    if (!issame)
+                    {
+
                         //Update the data in the database
                         await _databaseServices.UpdateAsync(oldvalue, newvalue);
 
                         // ==> publish the updated record in the further-topic
                         await _producerService.WriteMessage(_config["Kafka:further-topic"], JsonConvert.SerializeObject(newvalue));
-                        transaction.Commit();
+                        transactionScope.Complete();
 
                         return newvalue;
                     }
-                    catch (ProduceException<Null, string>)
-                    {
-                        throw;
-                    }
-                    catch (Exception)
-                    {
-                        throw;
-                    }
-
+                    return null;
                 }
-                return null;
+            }
+            catch (ProduceException<Null, string>)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 
         /// <summary>
         /// Adds new entitlements to the current list of entitlements.
         /// </summary>
-        public async Task AddEntitlements(PatchDTO request)
+        public async Task<GroupModel> AddEntitlements(PatchDTO request)
         {
-            var currentrecord = await _databaseServices.GetbyIdAsync(request.Id);
+            try
+            {
+                using (var transactionScope = new TransactionScope())
+                {
+                    var oldvalue = await _databaseServices.GetbyIdAsync(request.Id);
 
-            //var obj = _mapper.Map<PatchDTO, GroupModel>(request, currentrecord);
+                    var entitlements_from_db = oldvalue.Entitlements;
+                    var entitlements_from_request = request.Entitlements.Distinct();
+                    var new_entitlements = entitlements_from_request.Except(entitlements_from_db);
 
+                    if (new_entitlements.Count() == 0) return null;
 
+                    request.Entitlements = entitlements_from_db.Concat(new_entitlements).ToList();
 
+                    var newvalue = _mapper.Map<PatchDTO, GroupModel>(request);
+
+                    newvalue.Name = oldvalue.Name;
+                    newvalue.CreatedAt = oldvalue.CreatedAt;
+
+                    await _databaseServices.UpdateAsync(oldvalue, newvalue);
+
+                    await _producerService.WriteMessage(_config["Kafka:further-topic"], JsonConvert.SerializeObject(newvalue));
+
+                    transactionScope.Complete();
+                    return newvalue;
+                }
+                
+            }
+            catch (ProduceException<Null, string>)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
     }

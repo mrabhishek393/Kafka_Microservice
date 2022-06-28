@@ -105,3 +105,5 @@ C:\Users\Abhishek\source\repos\TheFinalProject\API\bin\Debug\net6.0\Microsoft.Az
 C:\Users\Abhishek\source\repos\TheFinalProject\API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Abhishek\source\repos\TheFinalProject\API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.AzureAppConfiguration.dll
 C:\Users\Abhishek\source\repos\TheFinalProject\API\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\Abhishek\source\repos\TheFinalProject\API\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Abhishek\source\repos\TheFinalProject\API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

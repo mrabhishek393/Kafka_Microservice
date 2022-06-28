@@ -1,0 +1,16 @@
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\b\extraAPI\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\b\extraAPI\bin\Debug\net6.0\appsettings.json
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\b\extraAPI\bin\Debug\net6.0\extraAPI.exe
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\b\extraAPI\bin\Debug\net6.0\extraAPI.deps.json
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\b\extraAPI\bin\Debug\net6.0\extraAPI.runtimeconfig.json
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\b\extraAPI\bin\Debug\net6.0\extraAPI.dll
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\extraAPI\net6.0\extraAPI.csproj.AssemblyReference.cache
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\extraAPI\net6.0\extraAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\extraAPI\net6.0\extraAPI.AssemblyInfoInputs.cache
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\extraAPI\net6.0\extraAPI.AssemblyInfo.cs
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\extraAPI\net6.0\scopedcss\bundle\extraAPI.styles.css
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\extraAPI\net6.0\extraAPI.csproj.CopyComplete
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\extraAPI\net6.0\extraAPI.dll
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\extraAPI\net6.0\refint\extraAPI.dll
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\extraAPI\net6.0\extraAPI.genruntimeconfig.cache
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\extraAPI\net6.0\ref\extraAPI.dll

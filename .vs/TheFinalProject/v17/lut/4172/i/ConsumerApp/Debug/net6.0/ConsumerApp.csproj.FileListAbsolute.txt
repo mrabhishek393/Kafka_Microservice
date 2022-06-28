@@ -1,0 +1,15 @@
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\b\ConsumerApp\Debug\net6.0\appsettings.Development.json
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\b\ConsumerApp\Debug\net6.0\appsettings.json
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\b\ConsumerApp\Debug\net6.0\ConsumerApp.exe
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\b\ConsumerApp\Debug\net6.0\ConsumerApp.deps.json
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\b\ConsumerApp\Debug\net6.0\ConsumerApp.runtimeconfig.json
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\b\ConsumerApp\Debug\net6.0\ConsumerApp.dll
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\ConsumerApp\Debug\net6.0\ConsumerApp.csproj.AssemblyReference.cache
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\ConsumerApp\Debug\net6.0\ConsumerApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\ConsumerApp\Debug\net6.0\ConsumerApp.AssemblyInfoInputs.cache
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\ConsumerApp\Debug\net6.0\ConsumerApp.AssemblyInfo.cs
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\ConsumerApp\Debug\net6.0\ConsumerApp.csproj.CopyComplete
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\ConsumerApp\Debug\net6.0\ConsumerApp.dll
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\ConsumerApp\Debug\net6.0\refint\ConsumerApp.dll
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\ConsumerApp\Debug\net6.0\ConsumerApp.genruntimeconfig.cache
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\ConsumerApp\Debug\net6.0\ref\ConsumerApp.dll

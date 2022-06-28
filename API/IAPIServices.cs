@@ -10,6 +10,6 @@ namespace API
         Task<GroupModel> InsertAsync(AddDataDTO newvalue);
         Task<GroupModel> UpdateAsync(UpdateDTO newvalue);
 
-        Task AddEntitlements(PatchDTO request);
+        Task<GroupModel> AddEntitlements(PatchDTO request);
     }
 }

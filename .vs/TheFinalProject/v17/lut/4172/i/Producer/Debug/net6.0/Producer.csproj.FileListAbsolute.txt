@@ -1,0 +1,10 @@
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\b\Producer\Debug\net6.0\Producer.deps.json
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\b\Producer\Debug\net6.0\Producer.dll
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\Producer\Debug\net6.0\Producer.csproj.AssemblyReference.cache
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\Producer\Debug\net6.0\Producer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\Producer\Debug\net6.0\Producer.AssemblyInfoInputs.cache
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\Producer\Debug\net6.0\Producer.AssemblyInfo.cs
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\Producer\Debug\net6.0\Producer.csproj.CopyComplete
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\Producer\Debug\net6.0\Producer.dll
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\Producer\Debug\net6.0\refint\Producer.dll
+C:\Users\Abhishek\source\repos\TheFinalProject\.vs\TheFinalProject\v17\lut\0\i\Producer\Debug\net6.0\ref\Producer.dll

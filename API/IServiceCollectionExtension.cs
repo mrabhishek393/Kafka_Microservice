@@ -20,7 +20,7 @@ namespace API
 
             services.AddDbContext<TestdbContext>(options =>
             {
-                options.UseSqlServer(config.GetConnectionString("minimaldbContext"));
+                options.UseSqlServer(config.GetConnectionString("TestdbContext"));
             });
 
             services.AddScoped<IDatabaseServices, DatabaseServices>();

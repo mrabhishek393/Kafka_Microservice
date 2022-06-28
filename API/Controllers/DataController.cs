@@ -29,7 +29,14 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<List<GroupModel>>> GetList()
         {
-            return await _APIServices.GetAllRecords();
+            try
+            {
+                return await _APIServices.GetAllRecords();
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
 
 
@@ -42,14 +49,22 @@ namespace API.Controllers
         public async Task<ActionResult<GroupModel>> Get(Guid? Id)
         {
             //_logger.LogInformation("API:  GET method invoked");
-            var currentrecord = await _APIServices.GetSingleRowById(Id);
-            if (currentrecord == null) return NotFound("No such Id found!!!");
+            try
+            {
+                var currentrecord = await _APIServices.GetSingleRowById(Id);
+                if (currentrecord == null) return NotFound("No such Id found!!!");
 
-            return Ok(currentrecord);
+                return Ok(currentrecord);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+
         }
 
         /// <summary>
-        /// To INSERT the record that is recieved through POST request.
+        /// To INSERT a new record
         /// </summary>
         /// <param name="mymodel">A single Record</param>
 
@@ -76,7 +91,7 @@ namespace API.Controllers
         }
 
         /// <summary>
-        /// To UPDATE the record that is recieved through POST request.
+        /// To UPDATE a whole record.
         /// </summary>
         /// <param name="request">A single Record</param>
         [HttpPut]
@@ -90,8 +105,10 @@ namespace API.Controllers
             {
                 var record = await _APIServices.GetSingleRowById(request.Id);
                 if (record == null) return BadRequest("No such record exists to update");
+
                 var updated=await _APIServices.UpdateAsync(request);
                 if (updated == null) return BadRequest("Duplicate data entered");
+
                 return Ok(updated);
             }
             catch (ProduceException<Null, string>)
@@ -119,8 +136,10 @@ namespace API.Controllers
             }
             var record = await _APIServices.GetSingleRowById(request.Id);
             if (record == null) return BadRequest("No such record exists to update");
-            await _APIServices.AddEntitlements(request);
-            return Ok()
+
+            var updated=await _APIServices.AddEntitlements(request);
+            if (updated == null) return BadRequest("Duplicate data entered");
+            return Ok(updated);
         }
     }
 }

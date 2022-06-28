@@ -17,12 +17,7 @@ namespace API.Models
             CreateMap<UpdateDTO, GroupModel>();
 
 
-            //CreateMap<PatchDTO, GroupModel>().ForMember(dest => dest.Entitlements, ct =>
-            //{
-            //    ct.UseDestinationValue();
-            //    ct.Ignore();
-            //})
-            //.AfterMap((src, dest) => dest.Entitlements.AddRange(src.Entitlements));
+            CreateMap<PatchDTO, GroupModel>();
         }
     }
 }
